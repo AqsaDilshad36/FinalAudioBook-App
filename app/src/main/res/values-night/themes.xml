@@ -4,4 +4,19 @@
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
+<!--    Mode-->
+
+    <style name="Screen_Bg">
+        <item name="android:background">@color/neutral_100</item>
+    </style>
+
+    <style name="onBoardingBg">
+        <item name="android:src">@drawable/background_pattern_dark</item>
+    </style>
+
+    <style name="SplashLogo">
+        <item name="lottie_url">https://lottie.host/a1c1ad77-414a-4ba2-a7c9-19913c99a8c7/oZRMjhS0p8.json</item>
+    </style>
+
+
 </resources>

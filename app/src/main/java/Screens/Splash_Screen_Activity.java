@@ -1,6 +1,8 @@
 package Screens;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +12,9 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.finalaudiobook.R;
 
+
+import kotlinx.coroutines.android.HandlerDispatcher;
+
 public class Splash_Screen_Activity extends AppCompatActivity {
 
     @Override
@@ -17,5 +22,12 @@ public class Splash_Screen_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_splash_screen);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(Splash_Screen_Activity.this, OnBoardingActivity.class);
+                finish();
+            }
+        } ,5000);
     }
 }
