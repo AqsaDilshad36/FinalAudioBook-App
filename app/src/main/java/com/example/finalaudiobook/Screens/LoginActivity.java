@@ -1,8 +1,6 @@
 package com.example.finalaudiobook.Screens;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,19 +10,13 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.finalaudiobook.R;
 
-public class OnBoardingActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_on_boarding);
+        setContentView(R.layout.activity_login);
 
-        findViewById(R.id.skipbtn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-             startActivity(new Intent(OnBoardingActivity.this,LoginActivity.class));
-            }
-        });
     }
 }
