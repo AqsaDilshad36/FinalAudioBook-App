@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.FinalAudioBook" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-         <item name="colorPrimary">@color/Primary_50</item>
+         <item name="colorPrimary">@color/primary_50</item>
     </style>
 
     <style name="Theme.FinalAudioBook" parent="Base.Theme.FinalAudioBook" />
@@ -128,7 +128,7 @@
     </style>
 
     <style name="medium_10">
-        <item name="android:fontFamily">@font/poppins_medium\</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
         <item name="android:textSize">10sp</item>
     </style>
 
@@ -174,46 +174,6 @@
         <item name="android:textSize">10sp</item>
     </style>
 
-    <!--    Font Family Medium-->
-    <style name="medium_48">
-        <item name="android:fontFamily">@font/poppins_medium</item>
-        <item name="android:textSize">48sp</item>
-    </style>
-
-    <style name="medium_32">
-        <item name="android:fontFamily">@font/poppins_medium</item>
-        <item name="android:textSize">32sp</item>
-    </style>
-
-    <style name="medium_24">
-        <item name="android:fontFamily">@font/poppins_medium</item>
-        <item name="android:textSize">24sp</item>
-    </style>
-
-    <style name="medium_20">
-        <item name="android:fontFamily">@font/poppins_medium</item>
-        <item name="android:textSize">20sp</item>
-    </style>
-
-    <style name="medium_16">
-        <item name="android:fontFamily">@font/poppins_medium</item>
-        <item name="android:textSize">16sp</item >
-    </style>
-
-    <style name="medium_14">
-        <item name="android:fontFamily">@font/poppins_medium</item>
-        <item name="android:textSize">14sp</item>
-    </style>
-
-    <style name="medium_12">
-        <item name="android:fontFamily">@font/poppins_medium</item>
-        <item name="android:textSize">12sp</item>
-    </style>
-
-    <style name="medium_10">
-        <item name="android:fontFamily">@font/poppins_medium\</item>
-        <item name="android:textSize">10sp</item>
-    </style>
 
 
     <!--    Font Family Bold-->
@@ -271,6 +231,24 @@
     <style name="SplashLogo">
         <item name="lottie_url">https://lottie.host/a1c1ad77-414a-4ba2-a7c9-19913c99a8c7/oZRMjhS0p8.json</item>
     </style>
+
+<!--    On Boarding-->
+    <style name="OnBoardingImg1">
+        <item name="android:src">@drawable/people</item>
+    </style>
+
+  <style name="OnBoardingTitle">
+      <item name="android:fontFamily">@font/poppins_semibold</item>
+      <item name="android:textSize">16sp</item>
+      <item name="android:textColor">@color/neutral_80</item>
+  </style>
+
+    <style name="OnBoardingContent">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/neutral_80</item>
+    </style>
+
 
 
 

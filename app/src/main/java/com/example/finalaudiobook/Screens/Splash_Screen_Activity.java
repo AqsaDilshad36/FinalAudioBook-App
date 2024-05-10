@@ -1,4 +1,4 @@
-package Screens;
+package com.example.finalaudiobook.Screens;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,6 +26,7 @@ public class Splash_Screen_Activity extends AppCompatActivity {
             @Override
             public void run() {
                 Intent intent = new Intent(Splash_Screen_Activity.this, OnBoardingActivity.class);
+                startActivity(intent);
                 finish();
             }
         } ,5000);
