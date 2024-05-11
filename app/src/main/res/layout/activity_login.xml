@@ -47,9 +47,10 @@
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-           android:layout_marginTop="16dp"
+            android:layout_marginTop="16dp"
             android:text="Remember me"
             style="@style/authCheckbox"/>
+
 
         <Button
             android:id="@+id/loginBtn"
@@ -60,6 +61,7 @@
             style="@style/flatButton"/>
 
         <TextView
+            android:id="@+id/forgetbtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -80,20 +82,20 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="25dp">
 
-          <ImageView
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              style="@style/outlineButton"
-              android:src="@drawable/logos_google"
-              android:layout_weight="1"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/logos_google"
+                android:layout_weight="1"
+                style="@style/outlineButton"/>
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-               style="@style/outlineButton"
                 android:src="@drawable/logos_facebook"
+                android:layout_weight="1"
                 android:layout_marginHorizontal="20dp"
-                android:layout_weight="1"/>
+                style="@style/outlineButton"/>
 
             <ImageView
                 android:layout_width="wrap_content"
