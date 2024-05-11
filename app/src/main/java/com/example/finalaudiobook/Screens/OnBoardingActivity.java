@@ -29,5 +29,12 @@ public class OnBoardingActivity extends AppCompatActivity {
              startActivity(new Intent(OnBoardingActivity.this,LoginActivity.class));
             }
         });
+
+        findViewById(R.id.skipbtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(OnBoardingActivity.this,ErrorActivity.class));
+            }
+        });
     }
 }

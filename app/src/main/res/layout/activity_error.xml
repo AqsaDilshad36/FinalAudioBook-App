@@ -42,31 +42,46 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        style="@style/horizontalRow">
+        style="@style/horizontalRow"/>
 
-        <LinearLayout
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:padding="30dp">
+
+        <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:padding="30dp">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="240dp"
-                style="@style/errorImg"/>
+            android:layout_height="240dp"
+            style="@style/errorImg"/>
 
 
-
-
-            <TextView
+        <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:text="Ops! Something Went Wrong"
                 android:layout_marginTop="30dp"
                 style="@style/OnBoardingTitle"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Please check your internet connection \nand try again"
+            android:layout_marginTop="12dp"
+           style="@style/OnBoardingContent"/>
+
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Retry"
+            android:layout_marginTop="30dp"
+            style="@style/outlineButton"/>
 
 
     </LinearLayout>

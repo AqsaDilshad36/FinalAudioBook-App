@@ -13,22 +13,23 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.finalaudiobook.R;
 
-public class ErrorActivity extends AppCompatActivity {
+public class WelcomeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_error);
+        setContentView(R.layout.activity_welcome);
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        findViewById(R.id.backbtn).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.skipBtn).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {ErrorActivity.super.onBackPressed();
-
+            public void onClick(View view) {
+                startActivity(new Intent(WelcomeActivity.this, FinishActivity.class));
             }
         });
+
     }
 }

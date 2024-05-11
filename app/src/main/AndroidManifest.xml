@@ -16,6 +16,15 @@
         android:theme="@style/Theme.FinalAudioBook"
         tools:targetApi="31">
         <activity
+            android:name=".Screens.FinishActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Screens.WelcomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Screens.Email_SentActivity"
+            android:exported="false" />
+        <activity
             android:name=".Screens.ErrorActivity"
             android:exported="false" />
         <activity
