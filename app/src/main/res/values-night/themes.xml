@@ -213,6 +213,28 @@
 
 
 
+    <!--    Error-->
+    <style name="errorImg">
+        <item name="android:src">@drawable/error_dark</item>
+    </style>
+
+    <!--    App Bar-->
+
+    <style name="appBarTitle">
+        <item name="fontFamily">@font/poppins_medium</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="appBarIcon">
+        <item name="android:tint">@color/white</item>
+    </style>
+
+    <style name="horizontalRow">
+        <item name="android:background">@color/neutral_80</item>
+    </style>
+
+
 
 
 

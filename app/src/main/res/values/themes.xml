@@ -251,8 +251,7 @@
         <item name="android:fontFamily">@font/poppins_medium</item>
     </style>
 
-
-
+    
 
     <style name="ghostButton">
         <item name="textAllCaps">false</item>
@@ -416,11 +415,7 @@
         <item name="android:fontFamily">@font/poppins_medium</item>
     </style>
 
-
-
-
-
-
+    
 
 
     <!--    On Boarding-->
@@ -439,7 +434,28 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/neutral_80</item>
     </style>
-
+    
+    
+<!--    Error-->
+    <style name="errorImg">
+        <item name="android:src">@drawable/error</item>
+    </style>
+    
+<!--    App Bar-->
+    
+    <style name="appBarTitle">
+        <item name="fontFamily">@font/poppins_medium</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/neutral_80</item>
+    </style>
+    
+    <style name="appBarIcon">
+        <item name="android:tint">@color/neutral_80</item>
+    </style>
+    
+    <style name="horizontalRow">
+        <item name="android:background">@color/primary_5</item>
+    </style>
 
 
 

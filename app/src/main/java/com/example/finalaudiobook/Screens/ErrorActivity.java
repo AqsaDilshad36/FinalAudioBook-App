@@ -1,7 +1,6 @@
 package com.example.finalaudiobook.Screens;
 
 import android.os.Bundle;
-import android.view.WindowManager;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,14 +10,13 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.finalaudiobook.R;
 
-public class ForgetPasswordActivity extends AppCompatActivity {
+public class ErrorActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_forget_password);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.activity_error);
+
     }
 }
