@@ -17,7 +17,155 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
-            android:gravity="center_vertical"
+            android:gravity="center_vertical">
+            
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                style="@style/authLogo"
+                android:layout_marginRight="10dp"/>
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Audi"
+                style="@style/navBoldTitle"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Books"
+                style="@style/navThinTitle"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="."
+                android:layout_weight="1"
+                style="@style/navDotTitle"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/setting"
+                style="@style/navIcon"/>
+
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="30dp"
+               android:gravity="center_vertical">
+                
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Categories"
+                    android:layout_weight="1"
+                    android:layout_marginRight="10dp"
+                    style="@style/dashBoardTitle"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="See more"
+                    style="@style/dashboardBtn"/>
+
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:scrollbars="none">
+
+
+            <LinearLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content">
+          
+          <Button
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Art"
+              android:layout_marginRight="12dp"
+              android:layout_marginLeft="30dp"
+              style="@style/customButton"/>
+
+                <Button
+                    style="@style/customButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="12dp"
+                    android:text="Business" />
+
+                <Button
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Comedy"
+              android:layout_marginRight="12dp"
+              style="@style/customButton"/>
+
+          <Button
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Drama"
+              android:layout_marginRight="12dp"
+              style="@style/customButton"/>
+
+          <Button
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Actions"
+              android:layout_marginRight="12dp"
+              style="@style/customButton"/>
+
+          <Button
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Horror"
+              android:layout_marginRight="12dp"
+              style="@style/customButton"/>
+
+          <Button
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Education"
+              android:layout_marginRight="12dp"
+              style="@style/customButton"/>
+
+          <Button
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Technologies"
+              android:layout_marginRight="12dp"
+              style="@style/customButton"/>
+
+          <Button
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Science"
+              android:layout_marginRight="30dp"
+              style="@style/customButton"/>
+
+      </LinearLayout>
+
+        </HorizontalScrollView>
+
+          
+          
+          
+      </LinearLayout>
+
+
+
+
+
+
+
         </LinearLayout>
 
 </ScrollView>
