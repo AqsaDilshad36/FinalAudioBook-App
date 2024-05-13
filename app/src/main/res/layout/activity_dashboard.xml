@@ -173,6 +173,7 @@
                     style="@style/dashBoardTitle"/>
 
                 <TextView
+                    android:id="@+id/seeMoreBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="See more"
@@ -194,6 +195,7 @@
                         android:layout_width="200dp"
                         android:layout_height="300dp"
                        android:layout_marginRight="16dp"
+                        android:layout_marginLeft="30dp"
                       android:src="@drawable/dashboard_img_1"/>
 
                     <ImageView
@@ -335,14 +337,227 @@
                 style="@style/dashboardBestsellerAuther"/>
 
         </LinearLayout>
+
         </LinearLayout>
 
 
+        <LinearLayout
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="16dp"
+            android:padding="12dp"
+            style="@style/customButton">
 
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/dashboard_bestseller_img"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Light Mage"
+                    style="@style/dashboardBestsellerTitle"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" Laurie Forest"
+                    style="@style/dashboardBestsellerAuther"/>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star"
+                        android:layout_marginRight="8dp"
+                        app:tint="@color/accent_50"/>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star"
+                        android:layout_marginRight="8dp"
+                        app:tint="@color/accent_50"/>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star"
+                        android:layout_marginRight="8dp"
+                        app:tint="@color/accent_50"/>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star"
+                        android:layout_marginRight="8dp"
+                        app:tint="@color/accent_50"/>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star_outline"
+                        android:layout_marginRight="8dp"
+                        app:tint="@color/accent_50"/>
+
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="1,000+ Listeners"
+                    style="@style/dashboardBestsellerAuther"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
 
     </LinearLayout>
     </HorizontalScrollView>
+            
+            
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="30dp"
+               android:layout_marginHorizontal="30dp"
+               android:layout_gravity="center_vertical">
 
+               <TextView
+
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="New Releases"
+                   android:layout_weight="1"
+                   android:layout_marginRight="10dp"
+                   style="@style/dashBoardTitle"/>
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="See more"
+                   style="@style/dashboardBtn"/>
+
+           </LinearLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+               android:layout_marginTop="16dp">
+                
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginLeft="30dp">
+
+                    <ImageView
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:src="@drawable/release_img_1"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="The Black Witch"
+                        style="@style/dashboardReleaseTitle"/>
+
+                </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginRight="12dp"
+                        android:layout_marginLeft="30dp">
+
+                        <ImageView
+                            android:layout_width="160dp"
+                            android:layout_height="160dp"
+                            android:src="@drawable/release_img_2"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="The prisoner's Key"
+                            style="@style/dashboardReleaseTitle"/>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginRight="12dp"
+                        android:layout_marginLeft="30dp">
+
+                        <ImageView
+                            android:layout_width="160dp"
+                            android:layout_height="160dp"
+                            android:src="@drawable/release_img_3"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="The Kidnapper's Accomplice"
+                            style="@style/dashboardReleaseTitle"/>
+
+                    </LinearLayout>
+
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginRight="12dp"
+                        android:layout_marginLeft="30dp">
+
+                        <ImageView
+                            android:layout_width="160dp"
+                            android:layout_height="160dp"
+                            android:src="@drawable/release_img_4"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="The Free Queen"
+                            style="@style/dashboardReleaseTitle"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </HorizontalScrollView>
 
 
 
