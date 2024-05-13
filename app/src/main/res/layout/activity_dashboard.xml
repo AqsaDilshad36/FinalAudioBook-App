@@ -155,17 +155,112 @@
 
         </HorizontalScrollView>
 
-          
-          
-          
-      </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="30dp"
+                android:gravity="center_vertical">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Recommended for You"
+                    android:layout_weight="1"
+                    android:layout_marginRight="10dp"
+                    style="@style/dashBoardTitle"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="See more"
+                    style="@style/dashboardBtn"/>
+
+            </LinearLayout>
+            
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:layout_marginTop="16dp">
+                
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    
+                    <ImageView
+                        android:layout_width="200dp"
+                        android:layout_height="300dp"
+                       android:layout_marginRight="16dp"
+                      android:src="@drawable/dashboard_img_1"/>
+
+                    <ImageView
+                        android:layout_width="200dp"
+                        android:layout_height="300dp"
+                        android:layout_marginRight="16dp"
+                        android:src="@drawable/dashboard_img_2"/>
+
+
+                    <ImageView
+                        android:layout_width="200dp"
+                        android:layout_height="300dp"
+                        android:layout_marginRight="16dp"
+                        android:src="@drawable/dashboard_img_1"/>
+
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="30dp"
+                android:gravity="center_vertical">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Best Seller"
+                    android:layout_weight="1"
+                    android:layout_marginRight="10dp"
+                    style="@style/dashBoardTitle"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="See more"
+                    style="@style/dashboardBtn"/>
+
+            </LinearLayout>
+
+
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:layout_marginTop="16dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
 
 
 
 
+    </LinearLayout>
+    </HorizontalScrollView>
 
 
-        </LinearLayout>
+
+
+    </LinearLayout>
 
 </ScrollView>

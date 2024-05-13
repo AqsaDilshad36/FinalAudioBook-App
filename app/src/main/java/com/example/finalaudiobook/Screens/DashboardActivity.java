@@ -23,12 +23,12 @@ public class DashboardActivity extends AppCompatActivity {
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        findViewById(R.id.).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(DashboardActivity.this, SeeMoreActivity.class));
-            }
-        });
+//        findViewById(R.id.).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(DashboardActivity.this, SeeMoreActivity.class));
+//            }
+//        });
 
     }
 }
