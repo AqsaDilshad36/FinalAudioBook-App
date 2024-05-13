@@ -251,6 +251,91 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
+        <LinearLayout
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="16dp"
+            android:padding="12dp"
+            style="@style/customButton">
+
+      <ImageView
+          android:layout_width="120dp"
+          android:layout_height="120dp"
+         android:src="@drawable/dashboard_bestseller_img"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Light Mage"
+                style="@style/dashboardBestsellerTitle"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Laurie Forest"
+                style="@style/dashboardBestsellerAuther"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/star"
+                    android:layout_marginRight="8dp"
+                    app:tint="@color/accent_50"/>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/star"
+                    android:layout_marginRight="8dp"
+                    app:tint="@color/accent_50"/>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/star"
+                    android:layout_marginRight="8dp"
+                    app:tint="@color/accent_50"/>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/star"
+                    android:layout_marginRight="8dp"
+                    app:tint="@color/accent_50"/>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/star_outline"
+                    android:layout_marginRight="8dp"
+                    app:tint="@color/accent_50"/>
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="1,000+ Listeners"
+                style="@style/dashboardBestsellerAuther"/>
+
+        </LinearLayout>
+        </LinearLayout>
 
 
 
