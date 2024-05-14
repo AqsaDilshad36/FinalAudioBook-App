@@ -30,7 +30,7 @@ public class OnBoardingActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.skipbtn).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.skipBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(OnBoardingActivity.this,ErrorActivity.class));

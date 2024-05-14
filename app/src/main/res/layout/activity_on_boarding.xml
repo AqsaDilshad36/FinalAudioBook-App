@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     style="@style/Screen_Bg"
     tools:context=".Screens.OnBoardingActivity">
-    
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,28 +22,27 @@
         android:gravity="bottom"
         android:padding="30dp">
 
-      <ImageView
-         android:layout_width="match_parent"
-          android:layout_height="250dp"
-          android:visibility="visible"
-          style="@style/OnBoardingImg1"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:visibility="visible"
+            style="@style/OnBoardingImg1"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:text="Title One"
-            style="@style/OnBoardingTitle"
-            android:layout_marginTop="30dp"/>
-
+            android:layout_marginTop="30dp"
+            style="@style/OnBoardingTitle" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
             android:text="Lorem ipsum dolor sit amet la maryame dor sut colondeum."
-            style="@style/OnBoardingContent"
-            android:layout_marginTop="12dp"/>
+            android:textAlignment="center"
+            android:layout_marginTop="12dp"
+            style="@style/OnBoardingContent"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -50,12 +51,12 @@
             android:layout_marginBottom="20dp">
 
             <Button
-                android:id="@+id/skipbtn"
+                android:id="@+id/skipBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Skip"
-                android:layout_marginRight="20dp"
                 android:layout_weight="1"
+                android:layout_marginRight="20dp"
                 style="@style/ghostButton"/>
 
             <Button
@@ -65,11 +66,9 @@
                 android:text="Next"
                 android:layout_weight="1"
                 style="@style/flatButton"/>
+
         </LinearLayout>
 
-
     </LinearLayout>
-
-
 
 </FrameLayout>
