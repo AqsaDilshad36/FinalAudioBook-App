@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "933328291337",
+    "project_id": "finalaudiobook",
+    "storage_bucket": "finalaudiobook.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:933328291337:android:c7ac311c350cd399be5ad8",
+        "android_client_info": {
+          "package_name": "com.example.finalaudiobook"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsBNBxg64-o7m47p2trbpfU1uzTBDhzLM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
