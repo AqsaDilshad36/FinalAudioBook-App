@@ -558,6 +558,12 @@
         <item name="android:textColor">@color/neutral_80</item>
     </style>
 
+    <style name="dashboardReleaseAuther">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/primary_50</item>
+    </style>
+
 
 
 
