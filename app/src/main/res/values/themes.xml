@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.FinalAudioBook" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.FinalAudioBook" parent="Theme.MaterialComponents.DayNight.NoActionBar.Bridge">
         <!-- Customize your light theme here. -->
          <item name="colorPrimary">@color/primary_50</item>
     </style>
@@ -555,6 +555,12 @@
         <item name="android:fontFamily">@font/poppins_medium</item>
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/neutral_80</item>
+    </style>
+
+    <style name="dashboardReleaseAuther">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/primary_50</item>
     </style>
 
 

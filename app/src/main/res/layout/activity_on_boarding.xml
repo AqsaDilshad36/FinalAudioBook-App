@@ -20,43 +20,39 @@
         android:gravity="bottom"
         android:padding="30dp">
 
-      <ImageView
-         android:layout_width="match_parent"
-          android:layout_height="250dp"
-          android:visibility="visible"
-          style="@style/OnBoardingImg1"/>
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/onBoardingViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-        <TextView
+
+        <LinearLayout
+            android:id="@+id/onBoardingIndicators"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:text="Title One"
-            style="@style/OnBoardingTitle"
-            android:layout_marginTop="30dp"/>
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="15sp" />
 
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:text="Lorem ipsum dolor sit amet la maryame dor sut colondeum."
-            style="@style/OnBoardingContent"
-            android:layout_marginTop="12dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
+            android:layout_marginHorizontal="30dp"
             android:layout_marginBottom="20dp">
 
+
+
             <Button
-                android:id="@+id/skipbtn"
+                android:id="@+id/skipBtn"
+                style="@style/ghostButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Skip"
                 android:layout_marginRight="20dp"
                 android:layout_weight="1"
-                style="@style/ghostButton"/>
+                android:text="Skip" />
 
             <Button
                 android:id="@+id/nextBtn"

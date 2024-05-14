@@ -4,16 +4,28 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.LinearLayout;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.finalaudiobook.R;
 
 public class OnBoardingActivity extends AppCompatActivity {
+
+
+
+    LinearLayout onBoardingIndicators;
+    Button nextBtn, skipBtn;
+    ViewPager2 onBoardingViewPager;
+    OnBoardingAdapter onBoardingAdapter;
+    String prevStarted = "yes";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +42,7 @@ public class OnBoardingActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.skipbtn).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.skipBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(OnBoardingActivity.this,ErrorActivity.class));
