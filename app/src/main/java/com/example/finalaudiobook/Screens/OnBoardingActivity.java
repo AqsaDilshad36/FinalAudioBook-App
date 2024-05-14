@@ -14,6 +14,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.example.finalaudiobook.Adapter.OnBoardingAdapter;
 import com.example.finalaudiobook.R;
 
 public class OnBoardingActivity extends AppCompatActivity {
