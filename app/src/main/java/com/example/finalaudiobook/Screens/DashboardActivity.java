@@ -30,5 +30,12 @@ public class DashboardActivity extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.settingsbtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(DashboardActivity.this, SettingsActivity.class));
+            }
+        });
+
     }
 }

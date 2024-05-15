@@ -1,8 +1,5 @@
 package com.example.finalaudiobook.Adapter;
 
-
-import static android.os.Build.VERSION_CODES.R;
-
 import android.content.res.Configuration;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,9 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.audibook.Models.OnBoardingModel;
-import com.example.audibook.R;
 import com.example.finalaudiobook.Models.OnBoardingModel;
+import com.example.finalaudiobook.R;
 
 import java.util.List;
 
@@ -51,9 +47,9 @@ public class OnBoardingAdapter extends RecyclerView.Adapter<OnBoardingAdapter.On
         OnboardingViewHolder(@NonNull View itemView){
             super(itemView);
             dataView = itemView;
-//            textTitle = itemView.findViewById(R.id.textTitle);
-//            textDescription = itemView.findViewById(R.id.textDescription);
-//            imageOnboarding = itemView.findViewById(R.id.imageOnboarding);
+            textTitle = itemView.findViewById(R.id.textTitle);
+            textDescription = itemView.findViewById(R.id.textDescription);
+            imageOnboarding = itemView.findViewById(R.id.imageOnboarding);
         }
 
         void setOnboardingData(OnBoardingModel onboardingItem){

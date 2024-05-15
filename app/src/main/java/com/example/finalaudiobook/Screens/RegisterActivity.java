@@ -3,6 +3,9 @@ package com.example.finalaudiobook.Screens;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ProgressBar;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +17,12 @@ import com.example.finalaudiobook.R;
 
 public class RegisterActivity extends AppCompatActivity {
 
+    EditText nameInput,emailInput,pwdInput,cpwdInput;
+
+    Button registerBtn;
+
+    ProgressBar loader;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +30,8 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        nameInput.findViewById(R.id.nameInput)
 
      findViewById(R.id.cancelBtn).setOnClickListener(new View.OnClickListener() {
          @Override
