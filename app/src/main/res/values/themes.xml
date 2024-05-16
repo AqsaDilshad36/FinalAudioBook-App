@@ -404,6 +404,11 @@
         <item name="android:textSize">14sp</item>
     </style>
 
+
+    <style name="loaderTint">
+        <item name="android:indeterminateTint">@color/primary_50</item>
+    </style>
+
 <!--    Input Field-->
 
     <style name="inputText">
@@ -457,7 +462,7 @@
         <item name="android:background">@color/primary_5</item>
     </style>
 
-<!--    Welcom-->
+<!--    Welcome-->
 
     <style name="welcomeLabel">
         <item name="android:fontFamily">@font/poppins_semibold</item>

@@ -41,6 +41,9 @@ public class RegisterActivity extends AppCompatActivity {
         emailInput.findViewById(R.id.emailInput);
         pwdInput.findViewById(R.id.pwd);
         cpwdInput.findViewById(R.id.cpwd);
+        registerBtn.findViewById(R.id.registerBtn);
+        loader.findViewById(R.id.loader);
+
 
         nameInput.addTextChangedListener(new TextWatcher() {
             @Override
@@ -189,6 +192,18 @@ public class RegisterActivity extends AppCompatActivity {
         }else{
             cpwdInput.setError(null);
             return true;
+        }
+    }
+
+    public void validation(){
+        boolean nameErr=false,emailErr=false,pwdErr=false,cpwdErr=false;
+        nameErr = nameValidation();
+        emailErr = emailValidation();
+        pwdErr = pwdValidation();
+        cpwdErr = cpwdValidation();
+        if((nameErr && emailErr && pwdErr && cpwdErr) == true){
+            loader
+
         }
     }
 

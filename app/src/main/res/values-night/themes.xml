@@ -200,6 +200,10 @@
         <item name="android:textSize">14sp</item>
     </style>
 
+    <style name="loaderTint">
+        <item name="android:indeterminateTint">@color/white</item>
+    </style>
+
     <!--    Input Field-->
 
     <style name="inputText">
