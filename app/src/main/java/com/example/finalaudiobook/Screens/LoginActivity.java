@@ -25,6 +25,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.finalaudiobook.MainActivity;
 import com.example.finalaudiobook.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -75,7 +76,7 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
-            pwdInput.addTextChangedListener(new TextWatcher() {
+        pwdInput.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -95,7 +96,7 @@ public class LoginActivity extends AppCompatActivity {
         findViewById(R.id.forgetbtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-           startActivity(new Intent(LoginActivity.this,ForgetPasswordActivity.class));
+                startActivity(new Intent(LoginActivity.this, ForgetPasswordActivity.class));
 
             }
         });
@@ -103,7 +104,7 @@ public class LoginActivity extends AppCompatActivity {
         findViewById(R.id.registerBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
             }
         });
 
@@ -116,12 +117,13 @@ public class LoginActivity extends AppCompatActivity {
 
 
     }
-    public boolean emailValidation(){
+
+    public boolean emailValidation() {
         String input = emailInput.getText().toString().trim();
-        if(input.equals("")){
+        if (input.equals("")) {
             emailInput.setError("Email Address is Required!!!");
             return false;
-        } else if(!Patterns.EMAIL_ADDRESS.matcher(input).matches()){
+        } else if (!Patterns.EMAIL_ADDRESS.matcher(input).matches()) {
             emailInput.setError("Enter Valid Email Address!!!");
             return false;
         } else {
@@ -130,12 +132,12 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    public boolean pwdValidation(){
+    public boolean pwdValidation() {
         String input = pwdInput.getText().toString().trim();
-        if(input.equals("")){
+        if (input.equals("")) {
             pwdInput.setError("Password is Required!!!");
             return false;
-        } else if(input.length() < 8){
+        } else if (input.length() < 8) {
             pwdInput.setError("Password at least 8 Characters!!!");
             return false;
         } else {
@@ -145,117 +147,120 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void validation() {
-        boolean emailErr = false, pwdErr = false;
-        emailErr = emailValidation();
-        pwdErr = pwdValidation();
-        if ((emailErr && pwdErr) == true) {
-            loader.setVisibility(View.VISIBLE);
-            loginBtn.setVisibility(View.GONE);
-            Dialog dialog = new Dialog(LoginActivity.this);
-            dialog.setContentView(R.layout.dialog_loading);
-            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-            dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-            dialog.setCanceledOnTouchOutside(false);
-            dialog.setCancelable(false);
-            TextView msg = dialog.findViewById(R.id.msgDialog);
-            msg.setText("Loading...");
-            dialog.show();
+        if (MainActivity.connectionCheck(LoginActivity.this)) {
+            boolean emailErr = false, pwdErr = false;
+            emailErr = emailValidation();
+            pwdErr = pwdValidation();
+            if ((emailErr && pwdErr) == true) {
+                loader.setVisibility(View.VISIBLE);
+                loginBtn.setVisibility(View.GONE);
+                Dialog dialog = new Dialog(LoginActivity.this);
+                dialog.setContentView(R.layout.dialog_loading);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                dialog.setCanceledOnTouchOutside(false);
+                dialog.setCancelable(false);
+                TextView msg = dialog.findViewById(R.id.msgDialog);
+                msg.setText("Loading...");
+                dialog.show();
 
-            // Declare Firebase Authentication Object
-            FirebaseAuth auth = FirebaseAuth.getInstance();
-            // Create User into Firebase Authentication
-            auth.signInWithEmailAndPassword(emailInput.getText().toString().trim(),pwdInput.getText().toString().trim())
-                    .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-                        @Override
-                        public void onSuccess(AuthResult authResult) {
+                // Declare Firebase Authentication Object
+                FirebaseAuth auth = FirebaseAuth.getInstance();
+                // Create User into Firebase Authentication
+                auth.signInWithEmailAndPassword(emailInput.getText().toString().trim(), pwdInput.getText().toString().trim())
+                        .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                            @Override
+                            public void onSuccess(AuthResult authResult) {
 
 
-                            // Check Status From Firebase Realtime Database by UID
+                                // Check Status From Firebase Realtime Database by UID
 
-                            // Get UID from Firebase Authentication
-                            String UID = auth.getUid();
-                            DatabaseReference myRef = FirebaseDatabase.getInstance().getReference();
-                            myRef.child("Users").child(""+UID).addListenerForSingleValueEvent(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                    if(snapshot.exists()){
-                                        String status = snapshot.child("status").getValue().toString();
-                                        if(status.equals("1")){
-                                            dialog.dismiss();
-                                            Dialog dialog = new Dialog(LoginActivity.this);
-                                            dialog.setContentView(R.layout.dialog_success);
-                                            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                                            dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                                            dialog.setCanceledOnTouchOutside(false);
-                                            dialog.setCancelable(false);
-                                            TextView msg = dialog.findViewById(R.id.msgDialog);
-                                            msg.setText("Login Successfully!!!");
-                                            dialog.show();
-                                            new Handler().postDelayed(new Runnable() {
-                                                @Override
-                                                public void run() {
-                                                    dialog.dismiss();
-                                                    startActivity(new Intent(LoginActivity.this, WelcomeActivity.class));
-                                                    finish();
-                                                }
-                                            },4000);
-                                        } else if(status.equals("0")){
-                                            dialog.dismiss();
-                                            Dialog dialog = new Dialog(LoginActivity.this);
-                                            dialog.setContentView(R.layout.dialog_error);
-                                            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                                            dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                                            dialog.setCanceledOnTouchOutside(false);
-                                            dialog.setCancelable(false);
-                                            TextView msg = dialog.findViewById(R.id.msgDialog);
-                                            msg.setText("Your Account Is Suspended By Admin");
-                                            dialog.show();
-                                            new Handler().postDelayed(new Runnable() {
-                                                @Override
-                                                public void run() {
-                                                    dialog.dismiss();
-                                                    loader.setVisibility(View.GONE);
-                                                    loginBtn.setVisibility(View.VISIBLE);
-                                                }
-                                            },4000);
+                                // Get UID from Firebase Authentication
+                                String UID = auth.getUid();
+                                DatabaseReference myRef = FirebaseDatabase.getInstance().getReference();
+                                myRef.child("Users").child("" + UID).addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                        if (snapshot.exists()) {
+                                            String status = snapshot.child("status").getValue().toString();
+                                            if (status.equals("1")) {
+                                                dialog.dismiss();
+                                                Dialog dialog = new Dialog(LoginActivity.this);
+                                                dialog.setContentView(R.layout.dialog_success);
+                                                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                                                dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                                                dialog.setCanceledOnTouchOutside(false);
+                                                dialog.setCancelable(false);
+                                                TextView msg = dialog.findViewById(R.id.msgDialog);
+                                                msg.setText("Login Successfully!!!");
+                                                dialog.show();
+                                                new Handler().postDelayed(new Runnable() {
+                                                    @Override
+                                                    public void run() {
+                                                        dialog.dismiss();
+                                                        startActivity(new Intent(LoginActivity.this, WelcomeActivity.class));
+                                                        finish();
+                                                    }
+                                                }, 4000);
+                                            } else if (status.equals("0")) {
+                                                dialog.dismiss();
+                                                Dialog dialog = new Dialog(LoginActivity.this);
+                                                dialog.setContentView(R.layout.dialog_error);
+                                                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                                                dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                                                dialog.setCanceledOnTouchOutside(false);
+                                                dialog.setCancelable(false);
+                                                TextView msg = dialog.findViewById(R.id.msgDialog);
+                                                msg.setText("Your Account Is Suspended By Admin");
+                                                dialog.show();
+                                                new Handler().postDelayed(new Runnable() {
+                                                    @Override
+                                                    public void run() {
+                                                        dialog.dismiss();
+                                                        loader.setVisibility(View.GONE);
+                                                        loginBtn.setVisibility(View.VISIBLE);
+                                                    }
+                                                }, 4000);
+                                            }
                                         }
+
                                     }
 
-                                }
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError error) {
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError error) {
 
-                                }
-                            });
+                                    }
+                                });
 
 
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            dialog.dismiss();
-                            Dialog dialog = new Dialog(LoginActivity.this);
-                            dialog.setContentView(R.layout.dialog_error);
-                            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                            dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                            dialog.setCanceledOnTouchOutside(false);
-                            dialog.setCancelable(false);
-                            TextView msg = dialog.findViewById(R.id.msgDialog);
-                            msg.setText("Your Email OR Password Is Wrong!!!");
-                            dialog.show();
-                            new Handler().postDelayed(new Runnable() {
-                                @Override
-                                public void run() {
-                                    dialog.dismiss();
-                                    loader.setVisibility(View.GONE);
-                                    loginBtn.setVisibility(View.VISIBLE);
-                                }
-                            },4000);
-                        }
-                    });
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                dialog.dismiss();
+                                Dialog dialog = new Dialog(LoginActivity.this);
+                                dialog.setContentView(R.layout.dialog_error);
+                                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                                dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                                dialog.setCanceledOnTouchOutside(false);
+                                dialog.setCancelable(false);
+                                TextView msg = dialog.findViewById(R.id.msgDialog);
+                                msg.setText("Your Email OR Password Is Wrong!!!");
+                                dialog.show();
+                                new Handler().postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        dialog.dismiss();
+                                        loader.setVisibility(View.GONE);
+                                        loginBtn.setVisibility(View.VISIBLE);
+                                    }
+                                }, 4000);
+                            }
+                        });
+
+            }
 
         }
-
     }
 }

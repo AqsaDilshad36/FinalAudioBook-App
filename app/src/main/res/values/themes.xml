@@ -445,8 +445,16 @@
     <style name="errorImg">
         <item name="android:src">@drawable/error</item>
     </style>
-    
-<!--    App Bar-->
+
+
+    <!--    Dialog-->
+
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_in_top</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_bottom</item>
+    </style>
+
+    <!--    App Bar-->
     
     <style name="appBarTitle">
         <item name="fontFamily">@font/poppins_medium</item>
