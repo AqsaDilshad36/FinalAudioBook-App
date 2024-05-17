@@ -73,9 +73,7 @@ public class RegisterActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
                 nameValidation();
-
             }
 
             @Override
