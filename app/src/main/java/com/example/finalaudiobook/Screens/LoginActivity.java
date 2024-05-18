@@ -63,8 +63,8 @@ public class LoginActivity extends AppCompatActivity {
         rememberMe = findViewById(R.id.rememberMe);
         loader = findViewById(R.id.loader);
         loginBtn = findViewById(R.id.loginBtn);
-        sharedPreferences=getSharedPreferences("myData",MODE_PRIVATE);
-        editor=sharedPreferences.edit();
+            sharedPreferences=getSharedPreferences("myData",MODE_PRIVATE);
+            editor=sharedPreferences.edit();
 
         if(sharedPreferences.getString("loginStatus","").equals("true")){
             startActivity(new Intent(LoginActivity.this, WelcomeActivity.class));
