@@ -2,6 +2,7 @@ package com.example.finalaudiobook.Screens;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -43,6 +44,9 @@ public class LoginActivity extends AppCompatActivity {
     Button loginBtn;
     CheckBox rememberMe;
     ProgressBar loader;
+    CheckBox checkBox;
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
 
 
     @Override
@@ -59,6 +63,14 @@ public class LoginActivity extends AppCompatActivity {
         rememberMe = findViewById(R.id.rememberMe);
         loader = findViewById(R.id.loader);
         loginBtn = findViewById(R.id.loginBtn);
+        sharedPreferences=getSharedPreferences("myData",MODE_PRIVATE);
+        editor=sharedPreferences.edit();
+
+        if(sharedPreferences.getString("loginStatus","").equals("true")){
+            startActivity(new Intent(LoginActivity.this, WelcomeActivity.class));
+            finish();
+        }
+
 
         emailInput.addTextChangedListener(new TextWatcher() {
             @Override
@@ -166,6 +178,17 @@ public class LoginActivity extends AppCompatActivity {
 
                 // Declare Firebase Authentication Object
                 FirebaseAuth auth = FirebaseAuth.getInstance();
+
+//                   Default Clear All Credentials And SharedPreferences
+                editor.clear();
+                editor.commit();
+                auth.signOut();
+
+
+
+
+
+
                 // Create User into Firebase Authentication
                 auth.signInWithEmailAndPassword(emailInput.getText().toString().trim(), pwdInput.getText().toString().trim())
                         .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
@@ -194,6 +217,22 @@ public class LoginActivity extends AppCompatActivity {
                                                 TextView msg = dialog.findViewById(R.id.msgDialog);
                                                 msg.setText("Login Successfully!!!");
                                                 dialog.show();
+
+//                                                Working of Remember Me
+                                                if(rememberMe.isChecked()){
+//                                                 If Remember is Checked
+                                                    editor.putString("loginStatus","true");
+                                                    editor.putString("UID",UID);
+                                                    editor.commit();
+
+                                                }else{
+//                                                    If Remember is UnChecked
+                                                    editor.putString("loginStatus","false");
+                                                    editor.putString("UID",UID);
+                                                    editor.commit();
+
+                                                }
+
                                                 new Handler().postDelayed(new Runnable() {
                                                     @Override
                                                     public void run() {
