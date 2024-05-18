@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,11 +15,15 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.finalaudiobook.MainActivity;
 import com.example.finalaudiobook.R;
 
 public class SettingsActivity extends AppCompatActivity {
 
     Button logoutBtn;
+    TextView profileName;
+    LinearLayout adminOptions;
+
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
 
@@ -32,8 +38,18 @@ public class SettingsActivity extends AppCompatActivity {
 
 
         logoutBtn = findViewById(R.id.logoutBtn);
+        profileName =findViewById(R.id.profileName);
+        adminOptions =findViewById(R.id.adminOptions);
         sharedPreferences = getSharedPreferences("myData",MODE_PRIVATE);
         editor = sharedPreferences.edit();
+
+
+        MainActivity.checkStatus(SettingsActivity.this);
+         profileName.setText(MainActivity.getName());
+         if(MainActivity.getRole().equals("admin")){
+         adminOptions.setVisibility(View.VISIBLE);
+         }
+
 
         findViewById(R.id.backBtn).setOnClickListener(new View.OnClickListener() {
             @Override
