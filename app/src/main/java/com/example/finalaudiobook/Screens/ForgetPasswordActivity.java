@@ -42,7 +42,7 @@ public class ForgetPasswordActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        emailInput.findViewById(R.id.emailInput);
+        emailInput=findViewById(R.id.emailInput);
         submitBtn = findViewById(R.id.submitBtn);
         loader = findViewById(R.id.loader);
 
