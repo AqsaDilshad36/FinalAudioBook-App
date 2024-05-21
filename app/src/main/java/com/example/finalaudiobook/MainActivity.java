@@ -54,14 +54,13 @@ public class MainActivity extends AppCompatActivity {
         db.child("Users").child(UID).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-           if(snapshot.exists()){
-             name = snapshot.child("name").getValue().toString();
-               image = snapshot.child("image").getValue().toString();
-               email = snapshot.child("email").getValue().toString();
-               role = snapshot.child("role").getValue().toString();
-               created_On = snapshot.child("created_On").getValue().toString();
-
-           }
+                if(snapshot.exists()){
+                    name = snapshot.child("name").getValue().toString();
+                    email = snapshot.child("email").getValue().toString();
+                    image = snapshot.child("image").getValue().toString();
+                    role = snapshot.child("role").getValue().toString();
+                    created_On = snapshot.child("created_on").getValue().toString();
+                }
             }
 
             @Override

@@ -40,10 +40,14 @@ public class FinishActivity extends AppCompatActivity {
 
         findViewById(R.id.finishbtn).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                startActivity(new Intent(FinishActivity.this,DashboardActivity.class));
+
+
+            public void onClick(View view) {
+                editor.putString("finishStatus","true");
+                editor.commit();
+                startActivity(new Intent(FinishActivity.this, DashboardActivity.class));
+                finish();
             }
         });
-
     }
 }

@@ -1,8 +1,10 @@
 package com.example.finalaudiobook.Screens;
 
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +16,9 @@ import com.example.finalaudiobook.R;
 
 public class Email_SentActivity extends AppCompatActivity {
 
+    String userEmail = "";
+    TextView emailMsg;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,12 +28,23 @@ public class Email_SentActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        emailMsg = findViewById(R.id.emailMsg);
+
+        Bundle extra = getIntent().getExtras();
+        if(extra != null){
+            userEmail = extra.getString("userEmail");
+        }
+
+        String[] splitEmail = userEmail.split("@");
+        String htmlContent = "<p>We sent an email to <b>"+userEmail.charAt(0)+userEmail.charAt(1)+"*****@"+splitEmail[1]+"</b> with a link to get back into your account.</p>";
+        emailMsg.setText(Html.fromHtml(htmlContent));
         findViewById(R.id.cancelBtn).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {Email_SentActivity.super.onBackPressed();
-
+            public void onClick(View v) {
+                Email_SentActivity.super.onBackPressed();
             }
         });
+
 
     }
 }

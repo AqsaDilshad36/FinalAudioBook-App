@@ -14,11 +14,18 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.finalaudiobook.MainActivity;
 import com.example.finalaudiobook.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class DashboardActivity extends AppCompatActivity {
 
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
+
+    static String UID = "";
+    static String name, email, role, image, created_on;
+
+    BottomNavigationView bottomAppBar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +39,8 @@ public class DashboardActivity extends AppCompatActivity {
 
         sharedPreferences = getSharedPreferences("myData",MODE_PRIVATE);
         editor = sharedPreferences.edit();
+//        bottomAppBar = findViewById(R.id.bottomAppBar);
+
 
 
         MainActivity.checkStatus(DashboardActivity.this);
