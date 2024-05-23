@@ -477,6 +477,12 @@
     <style name="appBarIcon">
         <item name="android:tint">@color/neutral_80</item>
     </style>
+
+    <style name="appBarText">
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/primary_50</item>
+    </style>
     
     <style name="horizontalRow">
         <item name="android:background">@color/primary_5</item>
@@ -636,6 +642,13 @@
         <item name="android:textColor">@color/primary_50</item>
     </style>
 
+
+    <style name="settingsItemsTitle">
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/neutral_80</item>
+    </style>
+
     <!--    Subscribe-->
 
     <style name="subscribeTitle">
@@ -693,6 +706,60 @@
         <item name="android:textColor">@color/neutral_60</item>
     </style>
 
+
+
+    <!--    Detail Page-->
+    <style name="detailBookTitle">
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="detailBookAuther">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/neutral_50</item>
+    </style>
+
+    <style name="detailBookRatingText">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/neutral_50</item>
+    </style>
+
+    <style name="detailBookSubTitle">
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/neutral_80</item>
+    </style>
+
+    <style name="detailBookContent">
+        <item name="android:fontFamily">@font/poppins_light</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/neutral_60</item>
+    </style>
+
+    <style name="detailBookReviewTitle">
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/neutral_80</item>
+    </style>
+
+    <style name="detailBookReviewRatingText">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/neutral_50</item>
+    </style>
+
+    <style name="detailBookReviewRatingViewMoreText">
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/accent_50</item>
+    </style>
+
+    <style name="detailBookReviewRatingIndicator">
+        <item name="android:tint">@color/neutral_20</item>
+    </style>
 
 
 
