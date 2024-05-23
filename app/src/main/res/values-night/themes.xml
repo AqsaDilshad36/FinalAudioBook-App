@@ -345,6 +345,25 @@
         <item name="android:textColor">@color/neutral_10</item>
     </style>
 
+
+    <style name="dashboardGrandTitle">
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/neutral_5</item>
+    </style>
+
+    <style name="dashboardCustomButtonText">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="dashboardCustomButtonIcon">
+        <item name="android:tint">@color/white</item>
+    </style>
+
+
+
     <!--    Settings-->
 
     <style name="settingsItems">
