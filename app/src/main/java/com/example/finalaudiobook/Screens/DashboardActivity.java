@@ -82,7 +82,7 @@ public class DashboardActivity extends AppCompatActivity {
 
 
         // Check User's Status
-        MainActivity.checkStatus(DashboardActivity.this,UID);
+//        MainActivity.checkStatus(DashboardActivity.this,UID);
 
         // Set Default Home Fragment
         getSupportFragmentManager().beginTransaction().add(R.id.frame,new HomeFragment()).commit();
