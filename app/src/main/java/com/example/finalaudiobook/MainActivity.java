@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
     static String UID = "";
-      static String name,email,image,role,created_On;
+      static String name,email,image,role,created_on;
       public static DatabaseReference db;
 
     @Override
@@ -43,31 +43,32 @@ public class MainActivity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("myData", MODE_PRIVATE);
         editor = sharedPreferences.edit();
 
-        UID = sharedPreferences.getString("UID", "").toString();
 
         if (db == null) {
             FirebaseDatabase.getInstance().setPersistenceEnabled(true);
             db = FirebaseDatabase.getInstance().getReference();
         }
 
-
-        db.child("Users").child(UID).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists()) {
-                    name = snapshot.child("name").getValue().toString();
-                    email = snapshot.child("email").getValue().toString();
-                    image = snapshot.child("image").getValue().toString();
-                    role = snapshot.child("role").getValue().toString();
-                    created_On = snapshot.child("created_on").getValue().toString();
+        if(!sharedPreferences.getString("UID","").equals("")){
+            UID = sharedPreferences.getString("UID","").toString();
+            db.child("Users").child(UID).addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if(snapshot.exists()){
+                        name = snapshot.child("name").getValue().toString();
+                        email = snapshot.child("email").getValue().toString();
+                        image = snapshot.child("image").getValue().toString();
+                        role = snapshot.child("role").getValue().toString();
+                        created_on = snapshot.child("created_on").getValue().toString();
+                    }
                 }
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
 
-            }
-        });
+                }
+            });
+        }
 
 
         Intent intent=new Intent(MainActivity.this, Splash_Screen_Activity.class);
@@ -141,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
     public static String getEmail(){return email;}
     public static String getImage(){return image;}
     public static String getRole(){return role;}
-    public static String getCreated_On(){return created_On;}
+    public static String getCreated_On(){return created_on;}
 
 
 }

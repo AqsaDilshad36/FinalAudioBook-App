@@ -17,6 +17,9 @@
         android:theme="@style/Theme.FinalAudioBook"
         tools:targetApi="31">
         <activity
+            android:name=".Screens.UsersProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".Screens.PlayerActivity"
             android:exported="false" />
         <activity
