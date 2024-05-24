@@ -40,21 +40,21 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        sharedPreferences = getSharedPreferences("myData",MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences("myData", MODE_PRIVATE);
         editor = sharedPreferences.edit();
 
-        UID =sharedPreferences.getString("UID", "").toString();
+        UID = sharedPreferences.getString("UID", "").toString();
 
-        if(db== null){
+        if (db == null) {
             FirebaseDatabase.getInstance().setPersistenceEnabled(true);
-            db =FirebaseDatabase.getInstance().getReference();
+            db = FirebaseDatabase.getInstance().getReference();
         }
 
 
         db.child("Users").child(UID).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.exists()){
+                if (snapshot.exists()) {
                     name = snapshot.child("name").getValue().toString();
                     email = snapshot.child("email").getValue().toString();
                     image = snapshot.child("image").getValue().toString();
@@ -68,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
 
         Intent intent=new Intent(MainActivity.this, Splash_Screen_Activity.class);
         startActivity(intent);
