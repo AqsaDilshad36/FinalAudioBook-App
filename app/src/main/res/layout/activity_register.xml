@@ -145,7 +145,8 @@
             android:layout_height="wrap_content"
             android:text="Cancel"
             android:layout_marginTop="16dp"
-            style="@style/outlineButton"/>
+            style="@style/outlineButton"
+            android:layout_marginBottom="30dp"/>
 
 
     </LinearLayout>
